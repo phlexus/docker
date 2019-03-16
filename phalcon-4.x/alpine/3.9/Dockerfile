@@ -11,7 +11,9 @@ RUN apk update && \
         php7-xml \
         php7-json \
         php7-session \
-        php7-fpm
+        php7-fpm \
+        php7-openssl \
+        php7-phar
 
 RUN apk add --no-cache --virtual  \
         build-dependencies \
