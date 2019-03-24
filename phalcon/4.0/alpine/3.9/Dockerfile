@@ -15,7 +15,10 @@ RUN apk update && \
         php7-openssl \
         php7-phar \
         php7-zip \
-        php7-dom
+        php7-dom \
+        php7-xml \
+        php7-xmlwriter \
+        php7-tokenizer
 
 RUN apk add --no-cache --virtual  \
         build-dependencies \
