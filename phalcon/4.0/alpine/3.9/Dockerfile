@@ -60,7 +60,7 @@ RUN sed -e 's/;clear_env = no/clear_env = no/' -i /etc/php7/php-fpm.d/www.conf &
     sed -e 's/;pm = dynamic/pm = static/' -i /etc/php7/php-fpm.d/www.conf && \
     sed -e 's/;pm\.max_children = 5/pm\.max_children = 10/' -i /etc/php7/php-fpm.d/www.conf
 
-EXPOSE 9000
+EXPOSE 9000 80 443
 
 CMD php-fpm7 -F -R
 
