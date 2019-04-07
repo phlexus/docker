@@ -30,7 +30,7 @@ RUN apt install -y  \
     ./configure && \
     make && make install && \
 
-    echo -e "extension=psr.so \nextension=phalcon.so" > /etc/php/7.2/mods-available/00_phalcon.ini && \
+    echo -e "extension=psr.so \nextension=phalcon.so" > /etc/php/7.2/mods-available/50-phalcon.ini && \
 
     apt purge -y make \
         gcc \
