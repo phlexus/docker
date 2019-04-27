@@ -18,7 +18,8 @@ RUN apk update && \
         php7-dom \
         php7-xml \
         php7-xmlwriter \
-        php7-tokenizer
+        php7-tokenizer \
+        php7-pdo_sqlite
 
 RUN apk add --no-cache --virtual  \
         build-dependencies \
