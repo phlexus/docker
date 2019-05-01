@@ -45,4 +45,4 @@ RUN sed -e 's/;clear_env = no/clear_env = no/' -i /etc/php/7.2/fpm/php-fpm.conf 
 
 EXPOSE 9000 80 443
 
-CMD php-fpm7 -F -R
+CMD php-fpm7.2 -F -R
