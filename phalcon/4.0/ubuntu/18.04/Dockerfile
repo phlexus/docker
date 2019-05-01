@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt update && \
-    DEBIAN_FRONTEND=noninteractive apt install -y git \
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y git \
         wget \
         curl \
         php7.2-common \
@@ -21,7 +20,6 @@ RUN apt install -y  \
     git clone --depth=1 "git://github.com/phalcon/cphalcon.git" && \
     cd cphalcon/build && \
     ./install && \
-
     cd /opt && \
     rm -rf php-psr && \
     git clone https://github.com/jbboehr/php-psr.git && \
@@ -29,9 +27,7 @@ RUN apt install -y  \
     phpize && \
     ./configure && \
     make && make install && \
-
     echo -e "extension=psr.so \nextension=phalcon.so" > /etc/php/7.2/mods-available/50-phalcon.ini && \
-
     apt purge -y make \
         gcc \
         php7.2-dev && \
