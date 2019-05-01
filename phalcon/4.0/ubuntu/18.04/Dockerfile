@@ -9,7 +9,8 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y git \
         php7.2-xml \
         php7.2-fpm \
         php7.2-zip \
-        php7.2-xml
+        php7.2-xml && \
+    mkdir -p /run/php
 
 RUN apt install -y  \
         make \
