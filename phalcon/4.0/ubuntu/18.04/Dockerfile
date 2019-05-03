@@ -28,8 +28,8 @@ RUN apt install -y  \
     phpize && \
     ./configure && \
     make && make install && \
-    echo -e "extension=psr.so \nextension=phalcon.so" > /etc/php/7.2/mods-available/50-phalcon.ini && \
-    echo -e "extension=psr.so \nextension=phalcon.so" > /etc/php/7.2/cli/conf.d/50-phalcon.ini && \
+    echo 'extension=psr.so\nextension=phalcon.so' > /etc/php/7.2/mods-available/50-phalcon.ini && \
+    echo 'extension=psr.so\nextension=phalcon.so' > /etc/php/7.2/cli/conf.d/50-phalcon.ini && \
     apt purge -y make \
         gcc \
         php7.2-dev && \
