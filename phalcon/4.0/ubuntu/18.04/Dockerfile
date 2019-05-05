@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y git \
         wget \
         curl \
+        unzip \
         php7.2-common \
         php7.2-cli \
         php7.2-mbstring \
