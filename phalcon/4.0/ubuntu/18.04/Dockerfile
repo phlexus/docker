@@ -19,7 +19,7 @@ RUN apt install -y  \
         php7.2-dev && \
     cd /opt && \
     rm -rf cphalcon && \
-    git clone --branch 'v4.0.0-alpha.4' "git://github.com/phalcon/cphalcon.git" && \
+    git clone --branch '4.0.x' "git://github.com/phalcon/cphalcon.git" && \
     cd cphalcon/build && \
     ./install && \
     cd /opt && \
