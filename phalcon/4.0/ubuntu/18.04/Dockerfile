@@ -3,13 +3,14 @@ FROM ubuntu:18.04
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y git \
         wget \
         curl \
+        unzip \
         php7.2-common \
         php7.2-cli \
         php7.2-mbstring \
         php7.2-xml \
         php7.2-fpm \
-        php7.2-zip \
-        php7.2-xml && \
+        php7.2-curl \
+        php7.2-zip && \
     mkdir -p /run/php
 
 RUN apt install -y  \
@@ -18,7 +19,7 @@ RUN apt install -y  \
         php7.2-dev && \
     cd /opt && \
     rm -rf cphalcon && \
-    git clone --depth=1 "git://github.com/phalcon/cphalcon.git" && \
+    git clone --branch '4.0.x' "git://github.com/phalcon/cphalcon.git" && \
     cd cphalcon/build && \
     ./install && \
     cd /opt && \
