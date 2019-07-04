@@ -10,6 +10,7 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y git \
         php7.2-xml \
         php7.2-fpm \
         php7.2-curl \
+        php7.2-mysql \
         php7.2-zip && \
     mkdir -p /run/php
 
