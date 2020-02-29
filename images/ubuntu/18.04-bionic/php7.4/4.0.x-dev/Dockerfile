@@ -73,4 +73,4 @@ RUN apt install -y \
 
 ADD ini/50-phalcon.ini /etc/php/7.4/cli/conf.d
 
-CMD ["php -S 0.0.0.0:80 -t public"]
+CMD mkdir -p /srv/public && php -S 0.0.0.0:80 -t public/
