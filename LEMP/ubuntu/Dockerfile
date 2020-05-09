@@ -75,5 +75,7 @@ RUN apt install -y \
 
 ADD ini/50-phalcon.ini /etc/php/7.2/cli/conf.d
 
+EXPOSE 9000 80
+
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 CMD ["/usr/bin/supervisord"]
