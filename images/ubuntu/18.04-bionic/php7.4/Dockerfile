@@ -20,7 +20,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt install -y git \
         php7.4-xml \
         php7.4-curl \
         php7.4-mysql \
-        php7.4-json \php7.4-zip && \
+        php7.4-json \
+        php7.4-gd \
+        php7.4-zip && \
         mkdir -p /run/php
 
 RUN wget https://github.com/composer/composer/releases/download/1.9.3/composer.phar && \
