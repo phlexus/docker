@@ -56,7 +56,7 @@ RUN apt install -y \
         echo 'extension=psr.so' > /etc/php/7.4/cli/conf.d/49-psr.ini && \
         cd /opt && \
         rm -rf cphalcon && \
-        git clone --depth=1 --branch "4.0.x" "https://github.com/phalcon/cphalcon.git" && \
+        git clone --depth=1 --branch "v4.0.6" "https://github.com/phalcon/cphalcon.git" && \
         cd cphalcon && \
         zephir fullclean && \
         zephir build && \
