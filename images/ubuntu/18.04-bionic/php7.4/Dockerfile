@@ -22,15 +22,18 @@ RUN DEBIAN_FRONTEND=noninteractive apt install -y git \
         php7.4-mysql \
         php7.4-json \
         php7.4-gd \
+	    php7.4-imagick \
         php7.4-zip && \
         mkdir -p /run/php
 
-RUN wget https://github.com/composer/composer/releases/download/1.9.3/composer.phar && \
-    wget https://github.com/phalcon/zephir/releases/download/0.12.16/zephir.phar && \
+RUN wget https://github.com/composer/composer/releases/download/2.0.8/composer.phar && \
+    wget https://github.com/phalcon/zephir/releases/download/0.12.20/zephir.phar && \
     chmod ugo+x composer.phar zephir.phar && \
     mv composer.phar /usr/local/bin/composer && \
-    mv zephir.phar /usr/local/bin/zephir && \
-    composer global require hirak/prestissimo
+    mv zephir.phar /usr/local/bin/zephir
+
+RUN CPU_CORES="$(getconf _NPROCESSORS_ONLN)";
+ENV MAKEFLAGS="-j${CPU_CORES}"
 
 RUN apt install -y \
         make \
@@ -58,7 +61,7 @@ RUN apt install -y \
         echo 'extension=psr.so' > /etc/php/7.4/cli/conf.d/49-psr.ini && \
         cd /opt && \
         rm -rf cphalcon && \
-        git clone --depth=1 --branch "v4.0.6" "https://github.com/phalcon/cphalcon.git" && \
+        git clone --depth=1 --branch "v4.1.0" "https://github.com/phalcon/cphalcon.git" && \
         cd cphalcon && \
         zephir fullclean && \
         zephir build && \
